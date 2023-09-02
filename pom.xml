@@ -7,7 +7,6 @@
     <groupId>com.calci.app</groupId>
     <artifactId>cal</artifactId>
     <version>2.7.0</version>
-    <relativepath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>
