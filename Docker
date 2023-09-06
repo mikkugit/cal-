@@ -1,5 +1,4 @@
-FROM Ubuntu :latest
+FROM open JDK:11
 EXPOSE 8080
-WORKDIR /var/lib/jenkins/workspace/pipline1/
-ADD devops.jar /var/lib/jenkins/workspace/pipline1/
-ENTRYPOINT ["java","-jar","/devops.jar"]
+COPY target/calci-app-1.0.0.jar .
+ENTRYPOINT ["java","-jar","calci-app-1.0.0.jar/"]
