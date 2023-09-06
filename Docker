@@ -1,4 +1,5 @@
-FROM openjdk:8
+FROM Ubuntu :latest
 EXPOSE 8080
-ADD target/devops.jar /var/lib/jenkins/workspace/pipline1
+WORKDIR /var/lib/jenkins/workspace/pipline1/
+ADD devops.jar /var/lib/jenkins/workspace/pipline1/
 ENTRYPOINT ["java","-jar","/devops.jar"]
