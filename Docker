@@ -1,1 +1,4 @@
-
+FROM openjdk:8
+EXPOSE 8080
+ADD target/devops.jar /var/lib/jenkins/workspace/pipline1
+ENTRYPOINT ["java","-jar","/devops.jar"]
