@@ -1,63 +1,50 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"   
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   
+http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  
+  <modelVersion>4.0.0</modelVersion>  
+  <groupId>com.calci.app</groupId>  
+  <artifactId>calci-app</artifactId>  
+  <version>1.0.0</version>
 
-    <modelVersion>4.0.0</modelVersion>
-<parent>
-    <groupId>com.calci.app</groupId>
-    <artifactId>cal</artifactId>
-    <version>2.7.0</version>
-    </parent>
+  <dependencies>  
+<dependency>
     <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>devops-integration</name>
-    <description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-	<dependencies>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
+</dependency>
 <dependency>
-   <dependency>
-   <groupId>org.junit.platform</groupId>
-    <artifactId>junit-jupiter-suite-enginre</artifactId>
-    </dependency>
-   
-<dependency>
-			<groupId>org.junit.platfrom</groupId>
-			<artifactId>junit-jupiter-api-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-<dependency>
-			<groupId>org.junit.platfrom</groupId>
-			<artifactId>junit-jupiter-api-actuator</artifactId>
-		</dependency>
-	</dependencies>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-suite-engine</artifactId>
+    <version>1.8.2</version>
+    <scope>test</scope>
+</dependency>
+</dependencies>
 <build>
-		<plugins>
+<plugins>
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+        </configuration>
+    </plugin>
+<plugin>
 
-			<plugin>
-				<groupId>org.junit.platfrom</groupId>
-				<artifactId>junit-jupiter-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>org.junit.platfrom</groupId>
-				<artifactId>junit-jupiter-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>build-info</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>pl.project13.maven</groupId>
-				<artifactId>git-commit-id-plugin</artifactId>
-			</plugin>
-		</plugins>
-		<finalName>devops-integration</finalName>
-	</build>
-
-</project>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M5</version>
+    <configuration>
+    <test>
+    com.testcal.app.testcal
+    </test>
+    </configuration>
+</plugin>
+</plugins>
+</build>
+ </project>
+		
+		
