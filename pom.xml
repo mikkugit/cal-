@@ -32,6 +32,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <target>1.7</target>
         </configuration>
     </plugin>
+</plugins>
 <plugin>
 
     <groupId>org.apache.maven.plugins</groupId>
@@ -43,6 +44,5 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     </test>
     </configuration>
 </plugin>
-</plugins>
 </build>
  </project>
