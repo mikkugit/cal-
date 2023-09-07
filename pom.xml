@@ -23,23 +23,17 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 </dependency>
 </dependencies>
 <build>
+<plugins>
 <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-  <configuration>
+        <configuration>
             <source>1.7</source>
             <target>1.7</target>
         </configuration>
     </plugin>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M5</version>
-    <configuration>
-    <test>
-    com.testcal.app.testcal
-    </test>
-    </configuration>
-</plugin>
+</plugins>
 </build>
- </project>
+ </project>
+		
+	
