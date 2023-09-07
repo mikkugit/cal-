@@ -22,6 +22,10 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <scope>test</scope>
 </dependency>
 </dependencies>
+  <properties>
+ <maven.compiler.source>1.8</maven.compiler.source>
+ <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
 <build>
 <plugins>
 <plugin>
