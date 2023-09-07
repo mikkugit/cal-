@@ -1,4 +1,4 @@
-FROM open JDK:11
+FROM tomcat:latest
+COPY ./target/calci-app-1.0.0.jar  /usr/local/tomcat/webapps/
 EXPOSE 8080
-COPY target/calci-app-1.0.0.jar .
-ENTRYPOINT ["java","-jar","calci-app-1.0.0.jar/"]
+CMD ["catalina.sh", "run"]
