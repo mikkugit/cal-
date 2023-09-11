@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Cloneing git') {
             steps {
-                git '
+                git 'https://github.com/mikkugit/cal-.git'
                 }
         }
          stage('Build') {
