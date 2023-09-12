@@ -19,12 +19,7 @@ pipeline {
             stage('Deploy Apache') {
             steps {
                 script {
-                    sh 'sudo systemctl stop apache2'
-                    sh 'sudo cp /path/to/your/apache-config.conf /etc/apache2/sites-available/'
-                    sh 'sudo a2ensite your-apache-config'
-                    sh 'sudo apache2ctl configtest'
-                    sh 'sudo systemctl reload apache2'
-                    sh 'sudo systemctl start apache2'
+                 sh ' apt install apache2 '
                 }
             }
         }
