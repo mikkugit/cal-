@@ -13,7 +13,7 @@ pipeline {
         } 
      stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: '']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url:'https://github.com/mikkugit/cal-.git']]])
             }
         }
             stage('Deploy Apache') {
