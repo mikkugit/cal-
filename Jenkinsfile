@@ -12,15 +12,20 @@ pipeline {
                 }
        
         }
-    stage('Deployment') {
+    stage('Deploy to Apache Server') {
             steps {
-                // Deploy the application to the Tomcat server
-                sh """
-                    cp ${WORKSPACE}/target/${WAR_FILE} ${TOMCAT_HOME}/webapps/${APP_NAME}.war
-                    ${TOMCAT_HOME}/bin/shutdown.sh
-                    sleep 5  # Wait for Tomcat to stop
-                    ${TOMCAT_HOME}/bin/startup.sh
-            """
+                script {
+                    def sshCredentials = credentials('your-ssh-credentials-id')
+                    sshCommand remote: sshCredentials, 
+                               host: 'your.apacheserver.com', 
+                               port: 22, 
+                               command: '''
+                               cd /path/to/your/webroot/
+                               rm -rf *   # Optional: Remove existing files before deploying
+                               tar -zxvf /path/to/your/deployable.tar.gz
+                               service apache2 restart
+                               '''
+                }
             }
         }
     }
