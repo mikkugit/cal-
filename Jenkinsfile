@@ -20,7 +20,7 @@ pipeline {
             }
         }
     }
-  post {
+    post {
         success {
             echo 'Deployment successful!'
         }
@@ -29,8 +29,4 @@ pipeline {
         }
     }
 }
-                }
-            }
-        }
-    }
 
