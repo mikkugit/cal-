@@ -11,12 +11,7 @@ pipeline {
                     sh 'mvn clean test'
             }
         } 
-     stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url:'https://github.com/mikkugit/cal-.git']]])
-            }
-        }
-            stage('Deploy Apache') {
+        stage('Deploy Apache') {
             steps {
                 script {
                  sh ' apt install apache2 -y '
