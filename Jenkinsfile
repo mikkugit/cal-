@@ -11,7 +11,7 @@ pipeline {
                     sh 'mvn clean test'
                 }
        
-        }
+        } 
     stage('Deploy to Apache Server') {
             steps {
                 script {
