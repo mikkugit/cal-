@@ -26,7 +26,6 @@ pipeline {
                                service apache2 restart
                                '''
                 }
-                }
             }
         }
     }
