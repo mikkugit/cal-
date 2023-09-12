@@ -19,7 +19,7 @@ pipeline {
             stage('Deploy Apache') {
             steps {
                 script {
-                 sh ' apt install apache2 '
+                 sh ' apt install apache2 -y '
                 }
             }
         }
