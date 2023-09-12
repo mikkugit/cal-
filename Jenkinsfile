@@ -15,7 +15,7 @@ pipeline {
     stage('Deploy to Apache Server') {
             steps {
                 script {
-                   sh 'apt install apache2'
+                   sh './deploy-apache.sh'
                 }
             }
         }
