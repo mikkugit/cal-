@@ -33,7 +33,8 @@ pipeline {
          steps {
              dir ('/var/lib/jenkins/workspace/multi-branch_master') {
                  script {
-                     sh 'docker build -t my-tomcat-app .'
+                     sh 'docker build -t my-apache-image .'
+ 
                  }
              }
          }
