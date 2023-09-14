@@ -31,7 +31,7 @@ pipeline {
 }
  stage('bulid') {
          steps {
-             dir ('/var/lib/jenkins/workspace/multi-branch_dev') {
+             dir ('/var/lib/jenkins/workspace/multi-branch_master') {
                  script {
                      sh 'docker build -t my-tomcat-app .'
                  }
