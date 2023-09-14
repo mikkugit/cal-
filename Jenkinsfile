@@ -29,4 +29,14 @@ pipeline {
         }
     }
 }
+ stage('bulid') {
+         steps {
+             dir ('/var/lib/jenkins/workspace/pipline1') {
+                 script {
+                     sh 'docker build -t my-tomcat-app .'
+                 }
+             }
+         }
+     }
+}
 
