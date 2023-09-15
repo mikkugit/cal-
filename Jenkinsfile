@@ -11,23 +11,15 @@ pipeline {
                     sh 'mvn clean test'
             }
         } 
-      stage('Deploy') {
+       stage('Deploy Apache HTTP Server') {
             steps {
-                // Deploy your application to Apache server
-                sh 'sudo apt update' 
+                // Install Apache HTTP Server using the package manager (e.g., apt-get on Ubuntu).
+                sh 'sudo apt update'
                 sh 'sudo apt install -y apache2'
-                // Add your deployment steps here
+
+                // Start Apache HTTP Server.
+                sh 'sudo systemctl start apache2'
             }
         }
     }
-    post {
-        success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Deployment failed!'
-        }
-    }
 }
-
-
