@@ -12,7 +12,7 @@ pipeline {
             }
         } 
             stage('Install Apache HTTP Server') {
-            steps {
+            steps { 
                 // Update the package repository (commands may vary depending on your Linux distribution).
                 sh 'sudo apt update'  // No need for the -y flag here
                 // Install Apache HTTP Server (commands may vary depending on your Linux distribution).
