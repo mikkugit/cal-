@@ -14,7 +14,7 @@ pipeline {
       stage('Deploy') {
             steps {
                 // Deploy your application to Apache server
-                sh 'sudo apt update'
+                sh 'sudo apt update' 
                 sh 'sudo apt install -y apache2'
                 // Add your deployment steps here
             }
