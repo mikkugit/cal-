@@ -1,4 +1,4 @@
 FROM ubuntu 
-COPY ./target/my-apache-config.conf /usr/local/apache2/conf/httpd.conf
+COPY ./target/my-apache.conf /usr/local/apache2/conf/httpd.conf
 EXPOSE 80
 CMD [“apache2ctl”, “-D”, “FOREGROUND”]
