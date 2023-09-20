@@ -11,14 +11,17 @@ pipeline {
                     sh 'mvn clean test'
             }
         } 
-            stage('Install Apache2') {
+            stage('Install Apache2') 
+        steps {
             sh 'sudo apt-get update'
             sh 'sudo apt-get install -y apache2'
         }
-        stage('Deploy Website') {
+        stage('Deploy Website')
+        steps {
             sh 'sudo cp -r /path/to/your/website/* /var/www/html/'
         }
-        stage('Start Apache2') {
+        stage('Start Apache2')
+        steps {
             sh 'sudo systemctl start apache2'
         }
             }
