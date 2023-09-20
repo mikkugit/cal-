@@ -17,18 +17,6 @@ pipeline {
                 script {
                     sh 'sudo apt-get update && sudo apt-get install -y apache2'
                 }
-
-                // Copy and deploy your application to Apache's document root
-                script {
-                    sh 'sudo cp -r /path/to/your/app/* /var/www/html/'
-                }
-
-                // Restart Apache
-                script {
-                    sh 'sudo systemctl restart apache2'
-                }
-            }
         }
     }
 }
-
