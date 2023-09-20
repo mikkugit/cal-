@@ -11,13 +11,19 @@ pipeline {
                     sh 'mvn clean test'
             }
       }
-          stage('Deploy to Apache Server') {
+          stage('Deploy Apache') {
             steps {
-                // Install Apache on the target server
-                script {
-                    sh 'sudo apt-get update && sudo apt-get install -y apache2'
-                }
+                sh 'sudo apt-get update -y'
+                sh 'sudo apt-get install apache2 -y'
+                sh 'sudo cp -r /path/to/your/app /var/www/html/'
+                sh 'sudo systemctl start apache2'
+            }
         }
     }
-}
+ post {
+        success {
+            // Optionally, you can add post-deployment steps here
+            // For example, testing or notifying the team
+        }
+    }
 }
