@@ -14,13 +14,13 @@ pipeline {
         stage('Deploy to Apache Server') {
             steps {
                 script {
-                    sh 'ssh ubuntu@3.208.26.239 "sudo apt-get update && sudo apt-get install -y apache2"'
+                    sh 'ssh ubuntu@34.207.239.125   "sudo apt-get update && sudo apt-get install -y apache2"'
                 }
                 script {
-                    sh 'ssh ubuntu@3.208.26.239 "sudo cp -r /path/to/your/app/* /var/www/html/"'
+                    sh 'ssh ubuntu@34.207.239.125   "sudo cp -r /path/to/your/app/* /var/www/html/"'
                 }
                 script {
-                    sh 'ssh ubuntu@3.208.26.239 "sudo systemctl restart apache2"'
+                    sh 'ssh ubuntu@34.207.239.125   "sudo systemctl restart apache2"'
                 }
             }
         }
