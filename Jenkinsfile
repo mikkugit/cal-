@@ -11,22 +11,17 @@ pipeline {
                 sh 'mvn clean test'
                 }
         }
-        stage('Install Apache HTTP Server') {
-            steps {
-                // Update the package repository (commands may vary depending on your Linux distribution).
-                sh 'sudo apt update'  // No need for the -y flag here
-                // Install Apache HTTP Server (commands may vary depending on your Linux distribution).
-                sh 'sudo apt install -y apache2'  // For Ubuntu/Debian
-            }
+       stage('Install Apache2') {
+            sh 'sudo apt-get update'
+            sh 'sudo apt-get install -y apache2'
         }
-
-        stage('Start Apache HTTP Server') {
-            steps {
-                // Start Apache HTTP Server using systemctl.
-                sh 'sudo systemctl start apache2'  // For Ubuntu/Debian
+           stage('Deploy Website') {
+            sh 'sudo cp -r /path/to/your/website/* /var/www/html/'
+          }
+        stage('Start Apache2') {
+            sh 'sudo systemctl start apache2'
+        }
             }
         }        
     
-    }
-        }
 
