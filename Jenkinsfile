@@ -11,26 +11,39 @@ pipeline {
                     sh 'mvn clean test'
             }
         } 
-          stage('Install Apache2') {
+        pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
             steps {
                 script {
-                       sh 'sudo apt-get update && sudo apt-get install -y apache2'
+                    git 'https://github.com/yourusername/yourrepo.git'
                 }
             }
         }
 
-        stage('Deploy Website') {
+        stage('Build and Test') {
             steps {
-                script {
-                      sh 'sudo cp -r /path/to/your/website/* /var/www/html/'
-                }
+                // Add your build and test commands here
             }
         }
 
-        stage('Start Apache2') {
+        stage('Deploy to Apache Server') {
             steps {
+                // Install Apache on the target server
                 script {
-                    sh 'sudo systemctl restart apache2'
+                    sh 'ssh ubuntu@3.208.26.239 "sudo apt-get update && sudo apt-get install -y apache2"'
+                }
+
+                // Copy and deploy your application to Apache's document root
+                script {
+                    sh 'ssh ubuntu@3.208.26.239 "sudo cp -r /path/to/your/app/* /var/www/html/"'
+                }
+
+                // Restart Apache
+                script {
+                    sh 'ubuntu@3.208.26.239 "sudo systemctl restart apache2"'
                 }
             }
         }
@@ -45,5 +58,4 @@ pipeline {
         }
     }
 }
-
-            
+    }
