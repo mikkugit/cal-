@@ -20,10 +20,4 @@ pipeline {
             }
         }
     }
- post {
-        success {
-            // Optionally, you can add post-deployment steps here
-            // For example, testing or notifying the team
-        }
-    }
 }
