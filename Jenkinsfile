@@ -20,7 +20,7 @@ pipeline {
                     sh 'ssh ubuntu@3.208.26.239 "sudo cp -r /path/to/your/app/* /var/www/html/"'
                 }
                 script {
-                    sh 'ubuntu@3.208.26.239 "sudo systemctl restart apache2"'
+                    sh 'ssh ubuntu@3.208.26.239 "sudo systemctl restart apache2"'
                 }
             }
         }
