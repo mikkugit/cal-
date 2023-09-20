@@ -15,8 +15,6 @@ pipeline {
             steps {
                 sh 'sudo apt-get update -y'
                 sh 'sudo apt-get install apache2 -y'
-                sh 'sudo cp -r /path/to/your/app /var/www/html/'
-                sh 'sudo systemctl start apache2'
             }
         }
     }
