@@ -19,3 +19,12 @@
         }
     }
 }
+   stage('bulid') {
+         steps {
+             dir ('') {
+                 script {
+                     sh 'docker build -t .'
+                 }
+             }
+         }
+     }
