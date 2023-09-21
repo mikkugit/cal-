@@ -1,4 +1,4 @@
-  pipeline {
+   pipeline {
     agent any
     stages {
         stage('Cloneing git') {
@@ -19,4 +19,5 @@
         }
     }
 }
+   
  
