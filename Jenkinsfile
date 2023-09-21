@@ -1,4 +1,4 @@
-   pipeline {
+ pipeline {
     agent any
     stages {
         stage('Cloneing git') {
@@ -17,16 +17,5 @@
                 sh 'sudo apt-get install apache2 -y'
             }
         }
-        stage('bulid') {
-         steps {
-             dir ('/var/lib/jenkins/workspace/multi-branch1_master') {
-                 script {
-                     sh 'docker build -t my-tomcat-app .'
-                 }
-              }
-           }
-      }
+    }
 }
-   }
-   
- 
