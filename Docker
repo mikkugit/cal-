@@ -1,4 +1,4 @@
-FROM ubuntu 
-COPY ./target/my-apache-config.conf /usr/local/apache2/conf/httpd.conf
-EXPOSE 80
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+FROM httpd:2.4
+COPY ./target/calci-app-1.0.0.jar /usr/local/apache2/conf/
+EXPOSE 8080
+CMD ["httpd-foreground"]
