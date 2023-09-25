@@ -13,8 +13,11 @@
         }
        stage('Deploy Apache') {
             steps {
+                sh 'sudo su'
                 sh 'sudo apt-get update -y'
                 sh 'sudo apt-get install apache2 -y'
+                sh 'cd ../..'
+                sh 'cd /var/www/html'
        }
      }
     }
