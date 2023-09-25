@@ -21,6 +21,7 @@
                 sh 'sudo apt install unzip'
                 sh 'unzip -o 2136_kool_form_pack.zip'
                 sh 'cd 2136_kool_form_pack '
+                sh 'mv * ..'
 
             }
         }
