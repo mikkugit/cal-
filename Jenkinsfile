@@ -17,7 +17,7 @@
                 sh 'sudo apt-get install apache2 -y'
             }
         }
-        stage('bulid') {
+      stage('bulid') {
          steps {
                  script {
                      sh 'docker build -t my-apache-image .'
@@ -26,3 +26,4 @@
         }
      }
  }
+ 
