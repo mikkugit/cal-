@@ -21,7 +21,7 @@
         sh 'ls'
         sh 'sudo apt install unzip'
         sh 'unzip -o 2108_dashboard.zip -d /var/www/html '
-        sh 'cd 2108_dashboard.zip'
+        sh 'cd /var/www/html/2108_dashboard' 
                 }
           }
 
