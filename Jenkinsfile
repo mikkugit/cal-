@@ -15,15 +15,11 @@
             steps {
                 sh 'sudo apt-get update -y'
                 sh 'sudo apt-get install apache2 -y'
+                sh 'wget https://www.tooplate.com/zip-templates/2136_kool_form_pack.zip '
             }
-        }
-      stage('bulid') {
-         steps {
-                 script {
-                     sh 'docker build -t my-apache-image .'
-              }
            }
+    
         }
      }
- }
+
  
