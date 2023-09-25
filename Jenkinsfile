@@ -21,6 +21,9 @@
         sh 'sudo apt install unzip'
         sh 'unzip -o 2108_dashboard.zip -d /var/www/html '
         sh 'cd /var/www/html/2108_dashboard' 
+        sh 'sudo systemctl start apache2'
+        sh 'sudo systemctl enable apache2'
+        
                 }
              }
         }
