@@ -31,6 +31,7 @@
       stage('bulid') {
          steps {
                  script {
+                  dir ('/var/lib/jenkins/workspace/multi-branch_master') {
                      sh 'docker build -t my-apache.conf.'
                }
             }
