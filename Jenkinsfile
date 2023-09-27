@@ -31,7 +31,7 @@
       stage('bulid') {
          steps {
                  script {
-                     sh 'docker build -t my-apache2 .'
+                     sh 'docker build -t my-apache.conf.'
                }
             }
         }
