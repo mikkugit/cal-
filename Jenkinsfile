@@ -26,14 +26,13 @@
         
                 }
              }
-        stage('bulid') {
-         steps {
-           dir ('/var/lib/jenkins/workspace/multi-branch_master') {
-                 script {
-                     sh 'docker build -t my-apache.conf.'
+      stage('Build Docker Image') {
+    steps {
+        script {
+            docker.build("my-apache:latest", "-f Dockerfile .")
+        
                }
             }
         }
-    }
     }
   }
