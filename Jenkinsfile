@@ -35,7 +35,7 @@
                      sh 'docker build -t my-apache.conf.'
                }
             }
-
+         }
         }
     
       }
