@@ -29,7 +29,7 @@
      stage('Build Docker Image') {
     steps {
         script {
-            def /var/lib/jenkins/workspace/multi-branch_master = "${workspace}/Docker"
+            def /var/lib/jenkins/workspace/multi-branch_master = "${workspace}/Dockerfile ."
             docker.build("my-apache:latest", "-f ${/var/lib/jenkins/workspace/multi-branch_master} .")
                }
             }
