@@ -28,11 +28,11 @@
                 }
           }
 
-     stage('Build Docker Image') {
+   stage('Build Docker Image') {
     steps {
         script {
-            docker.build("my-apache:latest", "-f Dockerfile .")
-
+            def /var/lib/jenkins/workspace/multi-branch_dev = "${workspace}/Docker"
+            docker.build("my-apache:latest", "-f ${/var/lib/jenkins/workspace/multi-branch_dev} .")
                }
             }
           }
