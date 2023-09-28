@@ -1,5 +1,0 @@
-FROM ubuntu 
-COPY ./target/calci-app-1.0.0.jar  /usr/local/apache2/conf/httpd.conf
-EXPOSE 8080
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
- 
