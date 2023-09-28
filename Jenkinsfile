@@ -29,10 +29,8 @@
      stage('Build Docker Image') {
     steps {
         script {
-          def imageName = "my-app-image"
-            def imageTag = "latest"
-            sh "docker build -t ${my-app-image}:${latest} ."
-               }
+          sh 'docker build -t my-apache-app .'
+          }
             }
         }
     }
