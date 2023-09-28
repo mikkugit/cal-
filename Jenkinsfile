@@ -31,7 +31,9 @@
    stage('Build Docker Image') {
     steps {
         script {
-            docker.build("my-apache:latest", "-f ${/var/lib/jenkins/workspace/multi-branch_dev} .")
+            def imageName = "my-app-image"
+            def imageTag = "latest"
+            sh "docker build -t ${my-app-image}:${latest} ."
                }
             }
           }
