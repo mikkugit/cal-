@@ -37,7 +37,6 @@
             }
           }
         }
-      stages {
         stage('Deploy to Kubernetes') {
             steps {
                 container('kubectl') {
@@ -47,5 +46,5 @@
         }
     }
 }
- }
+ 
       
