@@ -37,5 +37,14 @@
             }
           }
         }
-      }
- }
+      stages {
+        stage('Deploy to Kubernetes') {
+            steps {
+                container('kubectl') {
+                    sh 'kubectl apply -f deployment.yaml'
+                }
+            }
+        }
+    }
+}
+      
