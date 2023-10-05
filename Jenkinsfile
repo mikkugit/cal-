@@ -36,12 +36,6 @@
                }
             }
           }
-        }
-      stage('Run Docker Container') {
-         steps {
-             sh  'docker run -d -p 8080:80  690f3267871b' 
    }
- }
-    }
  }
       
