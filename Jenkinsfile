@@ -41,8 +41,7 @@
             steps {
                 script {
                 sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
-            sh 'docker tag my-apache-app:latest madhu140/ my-apache-app:v1.0'
-
+       
             // Authenticate to Docker Hub securely
             sh '''
             echo "@Mad140hu" | docker login -u madhu140 --password-stdin docker.io
@@ -50,8 +49,7 @@
 
             // Push the Docker images to Docker Hub
             sh 'docker push madhu140/ my-apache-app:latest'
-            sh 'docker push madhu140/ my-apache-app:v1.0' 
-            }
+                     }
           } 
         }
     }
