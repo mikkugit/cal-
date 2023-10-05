@@ -8,7 +8,7 @@
         }
           stage('Build and Test') {
             steps {
-                    sh 'mvn clean'
+                    sh 'mvn clean install'
             }
         }
    
