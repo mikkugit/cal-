@@ -40,7 +40,7 @@
         stage('Push image to Hub') {
             steps {
                 script {
-                    sh 'docker tag my-tomcat-app:latest madhu140/my-tomcat-app:latest'
+                sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
             sh 'docker tag my-apache-app:latest madhu140/ my-apache-app:v1.0'
 
             // Authenticate to Docker Hub securely
