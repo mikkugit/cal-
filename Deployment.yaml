@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: deployment
+  labels:
+    role: app
 spec:
-  replicas: 3  
+  replicas: 2
   selector:
     matchLabels:
-      app: my-app
+      role: app
   template:
     metadata:
       labels:
-        app: my-app
+        role: app
     spec:
       containers:
-        - name: my-app-container
-          image:  my-apache-app::latest
-          ports:
-            - containerPort: 8080 
+      - name: my-apache-app
+        image: 09eb771a8240  
+        resources:
+          requests:
+            cpu: 10m
