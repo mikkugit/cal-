@@ -48,7 +48,8 @@
             '''
 
             // Push the Docker images to Docker Hub
-            sh 'docker push madhu140/ my-apache-app:latest'
+                 sh  'docker push madhu140/ my-apache-app:latest'
+
                      }
           } 
         }
