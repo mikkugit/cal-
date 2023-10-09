@@ -53,12 +53,6 @@
                      }
           } 
         }
-       stage('Deploy to Kubernetes') {
-            steps {
-                // Deploy to Kubernetes using kubectl or Helm
-                sh 'kubectl apply -f /var/lib/jenkins/workspace/multi-branch_dev/Deployment.yaml'
-    }
+      
  }
     }
- }
-}
