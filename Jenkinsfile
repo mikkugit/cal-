@@ -53,10 +53,10 @@
                      }
           } 
         }
-          stage('Deploy to k8s')
-       steps{
-         script{
-          sh "kubectl apply -f Deployment.yaml"
+      stage('Deploy to k8s')
+         steps{
+           script{
+                 sh 'kubectl apply -f Deployment.yaml'
          }
       
  }
