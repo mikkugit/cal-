@@ -56,8 +56,7 @@
       stage('Deploy to k8s')
        steps{
          script{
-             kubernetesDeploy (configs:'deployment service.yaml',kubeconfigId: 'kubeconfig')
-         }
+          sh "kubectl apply -f Deployment.yaml"
        }
     }
   }
