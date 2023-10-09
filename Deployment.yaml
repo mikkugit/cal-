@@ -15,7 +15,7 @@ spec:
         role: app
     spec:
       containers:
-      - name: my-apache-app
+      - name: madhu140/my-apache-app:latest
         image: 09eb771a8240  
         resources:
           requests:
