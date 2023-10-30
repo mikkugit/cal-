@@ -57,6 +57,7 @@
             steps {
                 script {
                     sh 'sudo apt-get update'
+                    sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
            }
          }
       }
