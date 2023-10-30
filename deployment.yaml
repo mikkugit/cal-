@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app-name
+spec:
+  replicas: 3  # Number of replicas/instances you want to run
+
+  selector:
+    matchLabels:
+      app: my-apache-app
+
+  template:
+    metadata:
+      labels:
+        app: my-apache-app
+
+    spec:
+      containers:
+      - name: your-app-container
+        image: madhu140/my-apache-app:latest  # Your Docker image location
+
+        ports:
+        - containerPort: 80  # Port on which your application runs
+
+        # Add additional configuration like environment variables, volume mounts, etc.
