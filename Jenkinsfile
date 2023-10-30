@@ -58,6 +58,8 @@
                 script {
                     sh 'sudo apt-get update'
                     sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
+                    sh 'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+
           }
         }
      }
