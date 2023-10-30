@@ -53,10 +53,11 @@
                      }
           } 
         }
-      stage('Deploy to k8s') {
-         steps{
-           script{
-                 sh 'kubectl apply -f Deployment.yaml'
+     stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Authenticate with Kubernetes using credentials or kubeconfig
+                    sh 'kubectl apply -f path/to/deployment.yaml'
            }
          }
       }
