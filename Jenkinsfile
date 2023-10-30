@@ -53,11 +53,10 @@
              }
           }
         }
-     stage('Deploy to Kubernetes') {
+    stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Authenticate with Kubernetes using credentials or kubeconfig
-                    sh 'kubectl apply -f path/to/deployment.yaml'
+                    sh 'sudo apt-get update'
           }
         }
      }
