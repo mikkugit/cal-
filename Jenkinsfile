@@ -56,8 +56,8 @@
             steps {
                 script {
                   sh  'sudo apt-get install -y apt-transport-https ca-certificates curl'
-                  sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg'
-                  sh 'sudo apt update'
+                 sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/kubernetes-archive-keyring.gpg add -'
+                sh 'sudo apt update'
                 sh 'sudo apt install -y kubelet kubeadm kubectl'
                 sh 'sudo apt-mark hold kubelet kubeadm kubectl' 
 
