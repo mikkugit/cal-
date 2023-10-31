@@ -59,6 +59,10 @@
                 sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor > kubernetes-archive-key.gpg'
                   sh 'sudo mv kubernetes-archive-key.gpg /usr/share/keyrings/'
                   sh 'sudo snap install --classic kubelet'
+                 sh 'sudo snap install --classic kubeadm'
+                  sh 'sudo snap install --classic kubectl'
+               
+
             
 
                 }
