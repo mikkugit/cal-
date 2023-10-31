@@ -15,54 +15,6 @@
   stage('Deploy Apache') {
     steps {
         sh 'sudo apt-get update '
-        sh 'sudo apt-get install apache2 -y'
-        sh 'wget https://www.tooplate.com/zip-templates/2098_health.zip '
-        sh 'cd /var/www/html '
-        sh 'ls'
-        sh 'sudo apt install unzip'
-        sh 'unzip -o 2098_health.zip -d /var/www/html '
-        sh 'cd /var/www/html/2098_health' 
-        sh 'sudo systemctl start apache2'
-        sh 'sudo systemctl enable apache2'
-        
-                }
-          }
-
-   stage('Build Docker Image') {
-    steps {
-       dir ('/var/lib/jenkins/workspace/multi-branch_dev') {
-        script {
-                sh 'docker build -t my-apache-app .'
-               }
-            }
-          }
-   }
-        stage('Push image to Hub') {
-            steps {
-                script {
-                sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
-       
-            // Authenticate to Docker Hub securely
-            sh '''
-            echo "@Mad140hu" | docker login -u madhu140 --password-stdin docker.io
-            '''
-
-            // Push the Docker images to Docker Hub
-                 sh  'docker push madhu140/my-apache-app:latest'
-
-                     }
-          } 
-        }
-     stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    sh 'sudo apt-get update'
-                    sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
-                    sh'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
-                    sh 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
-
-           }
-         }
-      }
+    }
     }
  }
