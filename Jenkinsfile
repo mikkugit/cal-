@@ -57,6 +57,7 @@
             steps {
                 script {
                     sh 'sudo apt-get update'
+                    sh 'sudo apt-get install docker.io'
                     sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
                     sh'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
                     sh 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
