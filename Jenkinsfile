@@ -61,7 +61,8 @@
                   sh 'sudo snap install --classic kubelet'
                  sh 'sudo snap install --classic kubeadm'
                   sh 'sudo snap install --classic kubectl'
-               
+               sh 'sudo kubeadm init --pod-network-cidr=192.168.0.0/16'
+
 
             
 
