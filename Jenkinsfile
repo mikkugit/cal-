@@ -63,6 +63,7 @@
                   sh 'sudo snap install --classic kubectl'
                    sh 'sudo apt-get install socat'
                   sh 'sudo systemctl enable kubelet'
+                  sh 'sudo kubeadm init'
 
 
             
