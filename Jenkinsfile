@@ -32,7 +32,7 @@
     steps {
        dir ('/var/lib/jenkins/workspace/multi-branch1_dev') {
         script {
-                sh 'docker build -t my-apache-app .'
+                sh 'sudo docker build -t my-apache-app .'
                }
             }
           }
