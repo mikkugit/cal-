@@ -20,7 +20,6 @@
         sh 'cd /var/www/html '
         sh 'ls'
         sh 'sudo apt install unzip'
-        sh 'sudo chown -R jenkins_user:jenkins_group /var/www/html'
         sh ' sudo unzip -o 2108_dashboard.zip -d /var/www/html '
         sh 'cd /var/www/html/2108_dashboard' 
         sh 'sudo systemctl start apache2'
