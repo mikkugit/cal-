@@ -8,10 +8,11 @@
         }
           stage('Build and Test') {
             steps {
-                    sh 'mvn clean install'                        
+                    sh 'mvn clean install'
             }
         }
-       stage('Deploy Apache') {
+   
+  stage('Deploy Apache') {
     steps {
         sh 'sudo apt-get update -y'
         sh 'sudo apt-get install apache2 -y'
@@ -25,45 +26,43 @@
         sh 'sudo systemctl enable apache2'
         
                 }
-             }
-     stage('Build Docker Image') {
-    steps {
-        dir ('/var/lib/jenkins/workspace/multi-branch_master') {
-        script {
-          sh 'docker build -t my-apache-app .'
           }
+
+   stage('Build Docker Image') {
+    steps {
+       dir ('/var/lib/jenkins/workspace/multi-branch_dev') {
+        script {
+                sh 'docker build -t my-apache-app .'
+               }
             }
-        }
-    }
+          }
+   }
         stage('Push image to Hub') {
             steps {
                 script {
-                    sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
-      
-
+                sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
+       
             // Authenticate to Docker Hub securely
             sh '''
             echo "@Mad140hu" | docker login -u madhu140 --password-stdin docker.io
             '''
 
             // Push the Docker images to Docker Hub
-          sh 'docker push madhu140/my-apache-app:latest'
+                 sh  'docker push madhu140/my-apache-app:latest'
 
-      
-             }
-          }
+                     }
+          } 
         }
-    stage('Deploy to Kubernetes') {
+     stage('Deploy to Kubernetes') {
             steps {
                 script {
                     sh 'sudo apt-get update'
                     sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
-                    sh 'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
-                   sh 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
+                    sh'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+                    sh 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
 
-          }
-        }
-     }
-      
+           }
+         }
+      }
     }
-  }
+ }
