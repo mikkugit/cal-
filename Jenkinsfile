@@ -55,15 +55,11 @@
      stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    sh 'sudo apt-get update'
-                    sh 'sudo apt-get install docker.io'
-                    sh 'sudo apt-get install -y apt-transport-https ca-certificates curl'
-                    sh'sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg'
-                    sh 'echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list'
-                    sh   'sudo apt update'
-                    sh 'sudo apt install -y kubelet kubeadm kubectl'
-                    sh 'sudo apt-mark hold kubelet kubeadm kubectl' 
-                    sh  'sudo kubeadm init --pod-network-cidr=192.168.0.0/16'
+                  sh ' apt install docker.io'
+                  sh  'sudo apt-get install -y apt-transport-https ca-certificates curl'
+                  sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -'
+                  sh 'sudo sh -c 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list'
+                  sh 'sudo apt-get update'
 
 
            }
