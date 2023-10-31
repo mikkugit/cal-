@@ -62,6 +62,8 @@
                  sh 'sudo snap install --classic kubeadm'
                   sh 'sudo snap install --classic kubectl'
                sh 'sudo kubeadm init --pod-network-cidr=192.168.0.0/16'
+                  sh 'sudo apt-get install socat'
+                  sh 'sudo systemctl enable kubelet.service'
 
 
             
