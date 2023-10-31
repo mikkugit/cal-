@@ -63,6 +63,8 @@
                     sh   'sudo apt update'
                     sh 'sudo apt install -y kubelet kubeadm kubectl'
                     sh 'sudo apt-mark hold kubelet kubeadm kubectl' 
+                    sh  'sudo kubeadm init --pod-network-cidr=192.168.0.0/16'
+
 
            }
          }
