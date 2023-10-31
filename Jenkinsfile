@@ -21,7 +21,7 @@
         sh 'ls'
         sh 'sudo apt install unzip'
         sh 'unzip -o 2098_health.zip -d /var/www/html '
-        sh 'cd /var/www/html/2098_health.zip' 
+        sh 'cd /var/www/html/2098_health' 
         sh 'sudo systemctl start apache2'
         sh 'sudo systemctl enable apache2'
         
