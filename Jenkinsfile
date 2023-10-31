@@ -58,8 +58,8 @@
                   sh  'sudo apt-get install -y apt-transport-https ca-certificates curl'
                 sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor > kubernetes-archive-key.gpg'
                   sh 'sudo mv kubernetes-archive-key.gpg /usr/share/keyrings/'
-                  sh 'sudo snap install kubelet kubeadm kubectl'
-                sh 'sudo apt-mark hold kubelet kubeadm kubectl' 
+                  sh 'sudo snap install --classic kubelet kubeadm kubectl'
+            
 
                 }
            }
