@@ -62,7 +62,8 @@
                  sh 'sudo snap install --classic kubeadm'
                   sh 'sudo snap install --classic kubectl'
                    sh 'sudo apt-get install socat'
-                    sh 'sudo kubeadm init'
+                   sh 'sudo apt-get install conntrack'
+                  
 
 
             
