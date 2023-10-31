@@ -40,7 +40,7 @@
         stage('Push image to Hub') {
             steps {
                 script {
-                sh 'docker tag my-apache-app:latest madhu140/my-apache-app:latest'
+                sh ' sudo docker tag my-apache-app:latest madhu140/my-apache-app:latest'
        
             // Authenticate to Docker Hub securely
             sh '''
