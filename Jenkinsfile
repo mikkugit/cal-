@@ -11,5 +11,10 @@
              sh 'mvn clean install'
     }
   }
+      stage('bulid') {
+         steps {
+             dir ('/var/lib/jenkins/workspace/pipeline_master') {
+                 script {
+                     sh 'docker build -t my-tomcat .'
     }
   }
