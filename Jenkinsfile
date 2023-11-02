@@ -18,3 +18,7 @@
                      sh 'docker build -t my-tomcat .'
     }
   }
+         }
+      }
+    }
+  }
