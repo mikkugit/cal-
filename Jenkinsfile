@@ -63,6 +63,7 @@
                   sh 'sudo snap install --classic kubectl'
                    sh 'sudo apt-get install socat'
                    sh 'sudo apt-get install conntrack'
+                    sh 'sudo swapoff -a'
                   
 
 
