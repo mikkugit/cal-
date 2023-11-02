@@ -6,5 +6,10 @@
                 git 'https://github.com/mikkugit/cal-.git'
                 }
         }
+        stage('Build and Test') {
+            steps {
+             sh 'mvn clean install'
+    }
+  }
     }
   }
